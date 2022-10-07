@@ -18,6 +18,8 @@ include 'conexion/conexion.php';
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
   </script>
+
+  <script type="text/javascript" src="javascripts.js"></script>
 </head>
 
 <body background="img/f3.jpg">
@@ -88,7 +90,7 @@ include 'conexion/conexion.php';
                                     $nombre = $_POST["nombre"];
                                     $precio = $_POST["precio"];
                                     $numvoletas = $_POST["numvoletas"];
-                                    $llenartabla = "INSERT INTO cinema (idpelicula,nombre,precio,numvoletas ) values('$id','$nombre','$precio','$numvoletas')";
+                                    $llenartabla = "INSERT INTO cinema (nombre,precio,numvoletas,idpelicula) values('$nombre','$precio','$numvoletas','$id')";
                                     if ($conexion->query($llenartabla) === TRUE) {
                                     ?>
           <script>
@@ -104,7 +106,7 @@ include 'conexion/conexion.php';
                                 }
                             }
                             ?>
-          <input class="btn btn-success" type="submit" value="Registrarme">
+          <input class="btn btn-success" type="submit" value="Opcion 1">
 
         </form>
       </div>
@@ -113,7 +115,13 @@ include 'conexion/conexion.php';
   <div class="container text-center py-5">
     <div class="row align-items-start">
       <div class="col">
-        <button type="button" class="btn btn-warning">Opción 2</button>
+        <button type="submit" class="btn btn-primary" onclick="multiplicacion()">Opción 2</button>
+        <div class="col-lg-4">
+          <h3>El resultado de la suma es </h3>
+          <label type="text" class="form-control" id="sumaa" name="salario1" aria-label="Example text with button addon"
+            aria-describedby="button-addon1" disabled>0</label>
+
+        </div>
       </div>
       <div class="col">
         <button type="button" class="btn btn-danger">Opción 3</button>
